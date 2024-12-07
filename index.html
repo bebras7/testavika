@@ -1,1 +1,116 @@
- 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a73e8;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .color-changer {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1557b0;
+        }
+
+        .counter {
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 1.2rem;
+        }
+
+        #count {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1a73e8;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        .animation-box {
+            width: 100px;
+            height: 100px;
+            background-color: #1a73e8;
+            margin: 2rem auto;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My GitHub Pages Demo</h1>
+        
+        <div class="color-changer">
+            <button onclick="changeBackgroundColor()">Change Background Color</button>
+        </div>
+
+        <div class="counter">
+            <button onclick="incrementCounter()">Click Me!</button>
+            <span id="count">0</span>
+            <p>Number of times clicked</p>
+        </div>
+
+        <div class="animation-box"></div>
+    </div>
+
+    <script>
+        let count = 0;
+
+        function incrementCounter() {
+            count++;
+            document.getElementById('count').textContent = count;
+        }
+
+        function changeBackgroundColor() {
+            const colors = ['#f0f2f5', '#e8f5e9', '#fff3e0', '#e3f2fd', '#fce4ec'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
